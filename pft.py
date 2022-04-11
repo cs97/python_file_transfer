@@ -1,5 +1,4 @@
 #!/bin/python
-
 import socket, sys
 
 class tcp_socket():
@@ -42,6 +41,7 @@ def writefile(data, filename):
 def howto():
     print("send file  :", sys.argv[0], "-s [file] [ip] [port]")
     print("recive file:", sys.argv[0], "-r [file] [port]")
+    sys.exit()
 
 if __name__ == "__main__":
     x = tcp_socket()
@@ -57,9 +57,7 @@ if __name__ == "__main__":
             x.close()
             sys.exit()
         howto()
-        sys.exit()
     except:
         howto()
-        sys.exit()
 
 
