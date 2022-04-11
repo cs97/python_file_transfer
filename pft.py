@@ -50,10 +50,14 @@ if __name__ == "__main__":
             x.connect_to(sys.argv[3], sys.argv[4])
             x.send_all(readfile( sys.argv[2]))
             x.close()
+            sys.exit()
         if sys.argv[1] == "-r":
             x.listen_on(sys.argv[3])
             writefile(x.recive_all(), sys.argv[2])
             x.close()
+            sys.exit()
+        howto()
+        sys.exit()
     except:
         howto()
         sys.exit()
