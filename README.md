@@ -1,9 +1,11 @@
 # python_file_transfer
 
-usage:
+###usage:
+send file:
 ```
-send file   : pft.py -r <filename> <PORT>
+pft.py -r <filename> <PORT>
 ```
+recive file:
 ```
-recive file : pft.py -s <filename> <IP> <PORT>
+pft.py -s <filename> <IP> <PORT>
 ```
