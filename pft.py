@@ -38,6 +38,7 @@ def readfile(datei):
 def writefile(data, filename):
   with open(filename, "wb") as f:
     f.write(data)
+    
 def howto():
     print("send file  :", sys.argv[0], "-s [file] [ip] [port]")
     print("recive file:", sys.argv[0], "-r [file] [port]")
