@@ -41,20 +41,19 @@ def writefile(data, filename):
     f.write(data)
 
 if __name__ == "__main__":
-  x = tcp_socket()
-  try:
-    if sys.argv[1] == "-s":
-      x.connect_to(sys.argv[3], sys.argv[4])
-      x.send_all(readfile( sys.argv[2]))
-      x.close()
-
-    if sys.argv[1] == "-r":
-      x.listen_on(sys.argv[3])
-      writefile(x.recive_all(), sys.argv[2])
-      x.close()
-  except:
-    print("send file  :", sys.argv[0], "-s [file] [ip] [port]")
-    print("recive file:", sys.argv[0], "-r [file] [port]")
-    sys.exit()
+    x = tcp_socket()
+    try:
+        if sys.argv[1] == "-s":
+            x.connect_to(sys.argv[3], sys.argv[4])
+            x.send_all(readfile( sys.argv[2]))
+            x.close()
+        if sys.argv[1] == "-r":
+            x.listen_on(sys.argv[3])
+            writefile(x.recive_all(), sys.argv[2])
+            x.close()
+    except:
+        print("send file  :", sys.argv[0], "-s [file] [ip] [port]")
+        print("recive file:", sys.argv[0], "-r [file] [port]")
+        sys.exit()
 
 
