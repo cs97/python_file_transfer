@@ -1,4 +1,4 @@
-#!/bin/python
+#!/bin/python3.10
 import socket, sys
 
 class tcp_socket():
