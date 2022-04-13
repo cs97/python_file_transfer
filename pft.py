@@ -62,13 +62,11 @@ if __name__ == "__main__":
                 x.listen_on(sys.argv[3])
                 writefile(x.recive_all(), sys.argv[2])
                 x.close()
-                sys.exit()
             else:
                 howto()
 
         case _:
             howto()
-            sys.exit()
 
 
 
