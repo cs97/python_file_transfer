@@ -42,6 +42,8 @@ def writefile(data, filename):
 def howto():
     print("send file  :", sys.argv[0], "-s [file] [ip] [port]")
     print("recive file:", sys.argv[0], "-r [file] [port]")
+    print("get file  :", sys.argv[0], "-rs [file] [ip] [port]")
+    print("serve file:", sys.argv[0], "-rr [file] [port]")
     sys.exit()
 
 if __name__ == "__main__":
