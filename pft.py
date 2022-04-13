@@ -56,6 +56,14 @@ if __name__ == "__main__":
                 x.close()
             else:
                 howto()
+                
+        case "-rs":
+            if len(sys.argv) == 5:
+                x.connect_to(sys.argv[3], sys.argv[4])
+                writefile(x.recive_all(), sys.argv[2])
+                x.close()
+            else:
+                howto()
 
         case "-r":
             if len(sys.argv) == 4:
@@ -65,9 +73,13 @@ if __name__ == "__main__":
             else:
                 howto()
 
+        case "-rr":
+            if len(sys.argv) == 4:
+                x.listen_on(sys.argv[3])
+                x.send_all(readfile( sys.argv[2]))
+                x.close()
+            else:
+                howto()
+                
         case _:
             howto()
-
-
-
-
