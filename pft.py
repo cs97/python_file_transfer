@@ -45,20 +45,31 @@ def howto():
     sys.exit()
 
 if __name__ == "__main__":
+    
     x = tcp_socket()
-    try:
-        if sys.argv[1] == "-s":
-            x.connect_to(sys.argv[3], sys.argv[4])
-            x.send_all(readfile( sys.argv[2]))
-            x.close()
+    
+    match sys.argv[1]:
+        case "-s":
+            if len(sys.argv) == 5:
+                x.connect_to(sys.argv[3], sys.argv[4])
+                x.send_all(readfile( sys.argv[2]))
+                x.close()
+            else:
+                howto()
+
+        case "-r":
+            if len(sys.argv) == 4:
+                x.listen_on(sys.argv[3])
+                writefile(x.recive_all(), sys.argv[2])
+                x.close()
+                sys.exit()
+            else:
+                howto()
+
+        case _:
+            howto()
             sys.exit()
-        if sys.argv[1] == "-r":
-            x.listen_on(sys.argv[3])
-            writefile(x.recive_all(), sys.argv[2])
-            x.close()
-            sys.exit()
-        howto()
-    except:
-        howto()
+
+
 
 
